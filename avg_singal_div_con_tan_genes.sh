@@ -1,4 +1,5 @@
-(chip_pipeline_deeptools) [shubhangi@cardinal-login02 fun30 (7157_final & 7158)]$ computeMatrix reference-point \
+#(chip_pipeline_deeptools) [shubhangi@cardinal-login02 fun30 (7157_final & 7158)]$ 
+computeMatrix reference-point \
   -S FUN30_Log_combined_log2ratio.bw FUN30_Q_combined_log2ratio.bw \
   -R /fs/ess/PAS2675/annotation_files/yeast_annotations/sacCer3.intergenic.divergent.bed \
   -a 1000 -b 1000 \
@@ -17,7 +18,9 @@ computeMatrix reference-point \
   -o FUN30_convergent_matrix.gz \
   --outFileNameMatrix FUN30_convergent_matrix.tab
 
-(chip_pipeline_deeptools) [shubhangi@cardinal-login02 fun30 (7157_final & 7158)]$ python
+#(chip_pipeline_deeptools) [shubhangi@cardinal-login02 fun30 (7157_final & 7158)]$ 
+python
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -69,13 +72,11 @@ sns.boxplot(data=df_long, x="Region_Type", y="Signal", hue="Sample", palette="Se
 plt.title("FUN30 Signal Distribution in Intergenic Regions")
 plt.xlabel("Region Type")
 plt.ylabel("Mean log2 ratio signal")
-
 # Move legend outside the plot
 plt.legend(title="Sample", bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig("FUN30_boxplot_nooutliers.png", dpi=300, bbox_inches='tight')
 plt.close()
-
 # ------------------ LINE PLOT ------------------
 #Mean signal per region type per sample
 df_mean = df_long.groupby(["Region_Type", "Sample"], as_index=False)["Signal"].mean()
@@ -89,7 +90,8 @@ plt.savefig("FUN30_lineplot.png", dpi=300)
 plt.close()
 
 ##for visualizing peaks and div, conv and tandem genes, ratio bw files are better:
- (chip_pipeline_deeptools) [shubhangi@cardinal-login01 fun30]$  bigwigCompare \
+#(chip_pipeline_deeptools) [shubhangi@cardinal-login01 fun30]$  
+bigwigCompare \
   -b1 FUN30_Log_IP.bw \
   -b2 FUN30_Log_IN.bw \
   --operation ratio \
