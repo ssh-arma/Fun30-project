@@ -12,7 +12,7 @@ plotHeatmap -m fun30_brn1_q_gtf_matrix.gz \
   --heatmapWidth 10 \
   --heatmapHeight 15
 
-kmer clustering:
+#kmer clustering:
 plotHeatmap -m fun30_brn1_q_gtf_matrix.gz \
   -out fun30_brn1_q_gtf_heatmap_kmeans.png \
   --heatmapWidth 10 \
@@ -37,7 +37,6 @@ plotHeatmap -m q_fun30_brn1_biolrep_divergent_gene_matrix.gz \
   --colorList "#18007F,#640099,#FFFFFF,#FACD00,#CC0066" \
   --heatmapWidth 10 \
   --heatmapHeight 15  
-
 #kmer clustering:
 plotHeatmap -m q_fun30_brn1_biolrep_divergent_gene_matrix.gz \
   -out q_fun30_brn1_biolrep_divergent_gene_heatmap_kmeans.png \
@@ -47,7 +46,7 @@ plotHeatmap -m q_fun30_brn1_biolrep_divergent_gene_matrix.gz \
   --samplesLabel "FUN30_Q" "BRN1_Q" \
   --colorList "#18007F,#640099,#FFFFFF,#FACD00,#CC0066"
 
-#convergent
+#Convergent genes
 computeMatrix reference-point \
   -S /fs/ess/PAS2675/Shubhangi/FASTQ/fun30/FUN30_Q_log2ratio.bw \
      /fs/ess/PAS2675/Shubhangi/FASTQ/brn1_final/BRN1_Q_log2ratio.bw \
@@ -70,7 +69,7 @@ plotHeatmap -m q_fun30_brn1_biolrep_convergent_gene_matrix.gz \
   --samplesLabel "FUN30_Q" "BRN1_Q" \
   --colorList "#18007F,#640099,#FFFFFF,#FACD00,#CC0066"
 
-#tandem
+#Tandem genes
 computeMatrix reference-point \
   -S /fs/ess/PAS2675/Shubhangi/FASTQ/fun30/FUN30_Q_log2ratio.bw \
      /fs/ess/PAS2675/Shubhangi/FASTQ/brn1_final/BRN1_Q_log2ratio.bw \
@@ -93,7 +92,9 @@ plotHeatmap -m q_fun30_brn1_biolrep_tandem_gene_matrix.gz \
   --samplesLabel "FUN30_Q" "BRN1_Q" \
   --colorList "#18007F,#640099,#FFFFFF,#FACD00,#CC0066"
 
-#Metaplots of div, conv and tandem genes in log & q samples:
+
+#METAPLOTS OF DIV, CONV, AND TANDEM GENES IN LOG AND Q SAMPLES
+#divergent
 computeMatrix reference-point \
   -S FUN30_Log_log2ratio.bw FUN30_Q_log2ratio.bw \
   -R sacCer3.intergenic.divergent.bed \
@@ -108,7 +109,6 @@ plotProfile -m fun30_divergent_matrix.gz \
   --legendLocation upper-right \
   --plotType lines \
   --perGroup
-
 computeMatrix reference-point \
   -S BRN1_Log_log2ratio.bw BRN1_Q_log2ratio.bw \
   -R sacCer3.intergenic.divergent.bed \
@@ -123,6 +123,8 @@ plotProfile -m brn1_divergent_matrix.gz \
   --legendLocation upper-right \
   --plotType lines \
   --perGroup
+
+#convergent
 computeMatrix reference-point \
   -S FUN30_Log_log2ratio.bw FUN30_Q_log2ratio.bw \
   -R sacCer3.intergenic.convergent.bed \
@@ -137,7 +139,6 @@ plotProfile -m fun30_convergent_matrix.gz \
   --legendLocation upper-right \
   --plotType lines \
   --perGroup
-
 computeMatrix reference-point \
   -S BRN1_Log_log2ratio.bw BRN1_Q_log2ratio.bw \
   -R sacCer3.intergenic.convergent.bed \
@@ -153,6 +154,7 @@ plotProfile -m brn1_convergent_matrix.gz \
   --plotType lines \
   --perGroup
 
+#tandem
 computeMatrix reference-point \
   -S FUN30_Log_log2ratio.bw FUN30_Q_log2ratio.bw \
   -R sacCer3.intergenic.tandem.bed \
@@ -185,6 +187,7 @@ plotProfile -m brn1_tandem_matrix.gz \
 
 
 #GO analysis for fun30xbrn1_biolreplicates
+
 #to check structure: 
 (chip_brn1_pipeline) [shubhangi@cardinal-login03 fun30xbrn1_bioreps]$ head -n 2 fun30_brn1_q_gtf_sorted_genes.bed #this file was created from kmer clustering
 ##chrom	start	end	name	score	strand	thickStart	thickEnd	itemRGB	blockCount	blockSizes	blockStart	deepTools_group
