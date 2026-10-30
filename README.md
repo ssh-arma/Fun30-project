@@ -173,12 +173,4 @@ The repository currently contains research analysis scripts. Additional document
 
 **Shubhangi Sharma**
 
-Computational Chemistry | Computational Biology
-
-The Ohio State University
-
 GitHub: [ssh-arma](https://github.com/ssh-arma)
-
-## License
-
-A license has not yet been specified. Reuse and redistribution permissions should be confirmed before adding an open-source license.
