@@ -1,171 +1,149 @@
-Project Title: Fun30 Facilitates Condensin-Mediated Chromatin Compaction via Brn1 Loading in Quiescent Yeast
+Fun30 Facilitates Condensin-Mediated Chromatin Compaction via Brn1 Loading in Quiescent Yeast
+
+Computational Genomics | ChIP-seq Analysis | Chromatin Organization
 
 Overview
 
-Brief explanation of the project.
-Explain:
-	•	What problem the project solves
-	•	What the main goal is
-	•	What methods or tools are used
+Chromatin organization plays an essential role in genome stability and gene regulation. During quiescence, cells undergo extensive chromatin reorganization to maintain genome integrity and adapt to prolonged periods of reduced metabolic activity.
 
-Example:
+This project investigates the role of the ATP-dependent chromatin remodeler Fun30 in condensin-mediated chromatin organization in quiescent Saccharomyces cerevisiae (budding yeast).
 
-This project implements a numerical simulation to study the dynamics of a system using computational methods. The code generates results and visualizations that help analyze the behavior of the system under different parameters.
+The analysis focuses on the genome-wide distribution of Fun30 and the condensin subunit Brn1, examining their chromatin occupancy patterns, enrichment across genomic regions, and potential contributions to higher-order chromatin organization.
 
-⸻
+Computational approaches include ChIP-seq analysis, genomic signal profiling, replicate comparisons, and chromatin insulation analysis.
 
-Features
-	•	Feature 1
-	•	Feature 2
-	•	Feature 3
-	•	Feature 4
+Research Objectives
 
-Example:
-	•	Numerical integration of differential equations
-	•	Data analysis and visualization
-	•	Parameter sweeps and simulations
+* Characterize genome-wide Fun30 and Brn1 chromatin occupancy.
+* Compare protein enrichment across logarithmic growth and quiescence.
+* Investigate Fun30 distribution across divergent, convergent, and tandem intergenic regions.
+* Analyze chromatin insulation and genome organization.
+* Explore relationships between Fun30 activity, condensin recruitment, and chromatin compaction.
 
-⸻
+Computational Workflow
 
-Project Structure
+1. ChIP-seq Analysis
 
-project_name/
+Analysis of chromatin immunoprecipitation sequencing (ChIP-seq) data to investigate genome-wide Fun30 and Brn1 occupancy.
+
+Genomic signal tracks are processed to examine enrichment patterns across different experimental conditions.
+
+2. Biological and Technical Replicate Analysis
+
+Comparative analysis of biological and technical replicates to assess consistency in Fun30 and Brn1 ChIP-seq signal distributions.
+
+3. Genomic Signal Profiling
+
+Quantification of protein enrichment across three classes of intergenic regions:
+
+* Divergent: Regions between genes transcribed in opposite directions, away from one another.
+* Convergent: Regions between genes transcribed toward one another.
+* Tandem: Regions between genes transcribed in the same direction.
+
+Genomic signal matrices and average enrichment profiles are generated using deepTools.
+
+4. Chromatin Insulation Analysis
+
+Analysis of chromatin insulation patterns to investigate genomic organization and potential relationships between chromatin remodeling and condensin-associated compaction.
+
+5. Data Visualization
+
+Generation of heatmaps, average signal profiles, and comparative plots to visualize differences in chromatin occupancy across genomic regions and experimental conditions.
+
+Tools and Technologies
+
+Category	Tools
+Programming	Python, Bash
+Genomic signal analysis	deepTools
+Data manipulation	pandas
+Data visualization	matplotlib, seaborn
+Genomic data formats	BED, BigWig
+Reference genome	Saccharomyces cerevisiae (sacCer3)
+
+Repository Structure
+
+The repository currently contains analysis scripts for different components of the project.
+
+A planned organization is:
+
+Fun30-project/
 │
-├── main.py            # Main script
-├── simulation.py      # Core simulation code
-├── utils.py           # Helper functions
-├── data/              # Input or output data
-├── figures/           # Generated plots
-└── README.md          # Documentation
-
-
-⸻
-
-Requirements
-
-List software or libraries required.
-
-Example:
-
-Python 3.x
-
-Libraries:
-
-numpy
-matplotlib
-scipy
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-(or)
-
-pip install numpy matplotlib scipy
-
-
-⸻
+├── README.md
+├── LICENSE
+│
+├── scripts/
+│   ├── chipseq_analysis/
+│   ├── replicate_analysis/
+│   ├── chromatin_insulation/
+│   └── visualization/
+│
+├── data/
+│
+├── results/
+│   └── figures/
+│
+└── docs/
 
 Installation
 
 Clone the repository:
 
-git clone https://github.com/username/project_name.git
+git clone https://github.com/ssh-arma/Fun30-project.git
+cd Fun30-project
 
-Move into the project directory:
+Install the Python dependencies:
 
-cd project_name
+pip install pandas matplotlib seaborn
 
-Install dependencies if needed.
+Install deepTools using Conda:
 
-⸻
+conda create -n fun30-analysis -c conda-forge -c bioconda deeptools pandas matplotlib seaborn
+conda activate fun30-analysis
 
 Usage
 
-Run the main script:
+The repository contains scripts for genomic signal analysis, replicate comparisons, chromatin insulation analysis, and visualization.
 
-python main.py
+The workflows require appropriate ChIP-seq signal tracks, genomic annotations, and other experiment-specific input files.
 
-Optional parameters:
+Some scripts contain HPC-specific file paths and require modification before execution in a different computational environment.
 
-python main.py --parameter value
+Detailed execution instructions will be added as the analysis scripts are standardized.
 
-Explain what the script will do.
+Results and Outputs
 
-Example:
+The computational analyses generate outputs such as:
 
-The script runs the simulation and generates plots of the results.
+* Fun30 and Brn1 genomic occupancy profiles.
+* Heatmaps of protein enrichment across selected genomic regions.
+* Average ChIP-seq signal profiles.
+* Comparisons of enrichment across divergent, convergent, and tandem intergenic regions.
+* Chromatin insulation measurements and visualizations.
 
-⸻
+These analyses are intended to help characterize how Fun30 and condensin-associated chromatin organization differ across cellular conditions.
 
-Method / Approach
+Scientific Significance
 
-Explain the core idea or algorithm.
+Chromatin remodeling and condensin activity are important regulators of genome organization.
 
-Example:
-	•	Numerical integration
-	•	Machine learning model
-	•	statistical analysis
-	•	simulation
-	•	data processing
+Investigating Fun30-associated changes in Brn1 occupancy and chromatin insulation may provide insights into the molecular mechanisms that regulate chromosome organization during quiescence.
 
-You can include equations or diagrams if needed.
+By integrating genomic signal analysis with chromatin organization measurements, this project contributes to understanding the relationship between ATP-dependent chromatin remodeling and higher-order genome structure.
 
-⸻
+Project Status
 
-Results / Output
+Research analysis and documentation in progress.
 
-Explain what the program produces.
+The repository contains computational analyses developed for a research project investigating Fun30 and condensin-mediated chromatin organization.
 
-Example:
-	•	Plots
-	•	simulation data
-	•	output files
-
-Example output files:
-
-results.png
-simulation_data.csv
-output.log
-
-
-⸻
-
-Configuration
-
-List parameters that users may change.
-
-Example:
-
-Parameter	Description
-dt	timestep
-steps	number of iterations
-k	spring constant
-
-
-⸻
-
-Contributing
-
-If contributions are welcome:
-	1.	Fork the repository
-	2.	Create a new branch
-	3.	Submit a pull request
-
-⸻
-
-License
-
-Specify the license (MIT, GPL, etc.)
-
-Example:
-
-MIT License
-
-⸻
+Scripts are being organized and documented to improve readability, portability, and reproducibility.
 
 Author
 
-Your Name
-Affiliation / Institution
-Year
+Shubhangi Sharma
+
+Computational Chemistry | Computational Biology
+
+The Ohio State University
+
+GitHub: ssh-arma
