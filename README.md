@@ -165,9 +165,7 @@ The computational analyses provide a framework for examining how chromatin-assoc
 
 ## Project Status
 
-**Status:** Research analysis completed in part; repository documentation and workflow organization are ongoing.
-
-The repository currently contains research analysis scripts. Additional documentation, representative figures, and reproducibility improvements will be incorporated as the project is organized.
+**Status:** Awaiting further communication from principal investigator.
 
 ## Author
 
